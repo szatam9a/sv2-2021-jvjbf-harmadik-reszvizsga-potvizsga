@@ -20,8 +20,6 @@ class UserTest {
 
         User user2 = new User("username","1235");
         assertNotEquals(1006908952,user2.getPassword());
-
-
     }
 
     @Test

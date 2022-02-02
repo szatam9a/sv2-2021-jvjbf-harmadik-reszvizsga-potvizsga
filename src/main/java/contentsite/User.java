@@ -39,8 +39,9 @@ public class User {
         return userName;
     }
 
-    public String getPassword() {
-        return String.valueOf(Objects.hash(userName)).concat(String.valueOf(Objects.hash(password)));
+    public int getPassword() {
+        String toHash = userName.concat(password);
+        return Objects.hash(toHash);
     }
 
     public boolean isPremiumMember() {
