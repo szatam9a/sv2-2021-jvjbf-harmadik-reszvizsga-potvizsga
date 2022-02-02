@@ -2,6 +2,9 @@ package contentsite;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.ObjectStreamException;
+import java.util.Objects;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class UserTest {
@@ -20,6 +23,8 @@ class UserTest {
 
         User user2 = new User("username","1235");
         assertNotEquals(1006908952,user2.getPassword());
+
+
     }
 
     @Test

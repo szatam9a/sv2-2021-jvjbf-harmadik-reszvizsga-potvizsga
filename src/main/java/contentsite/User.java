@@ -1,16 +1,17 @@
 package contentsite;
 
+import java.io.ObjectStreamException;
 import java.util.Objects;
 
 public class User {
     private String userName;
-    private String password;
+    private int password;
     private boolean premiumMember;
     private boolean logIn;
 
     public User(String name, String password) {
         this.userName = name;
-        this.password = password;
+        this.password = Objects.hash(name+password);
 
     }
 
@@ -40,8 +41,7 @@ public class User {
     }
 
     public int getPassword() {
-        String toHash = userName.concat(password);
-        return Objects.hash(toHash);
+        return password;
     }
 
     public boolean isPremiumMember() {
@@ -53,7 +53,7 @@ public class User {
     }
 
     public boolean logIn(String username, String password) {
-        if (this.userName.equals(username) && this.password.equals(password))
+        if (this.userName.equals(username) && this.password == (Objects.hashCode(username+password)))
             return true;
         else return false;
     }
