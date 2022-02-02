@@ -14,6 +14,6 @@ class ExamResultTest {
         assertEquals(80, examResult.getPractice());
         assertEquals(50, examResult.getTheory());
     }
-
-
 }
+
+
